@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x=prompt("Nhập số x:");
+    let arr=[];
+    for (let i = 0; i <= x; i++) {
+        arr.push(i)
+    }
+    function sNT(n){
+        if (n < 2) return false;
+        if (n < 4) return true;
+        if (n >= 4) {
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n%i === 0) return false;
+            }
+            return true;
+        }
+    }
+    function sumOfListPrime(){
+        let sum=0
+        for (let i = 0; i < arr.length; i++) {
+            if (sNT(arr[i])) {
+                sum+=arr[i];
+            }
+        }
+        return sum;
+    }
+    alert("Tổng các số nguyên tố tới x là: "+ sumOfListPrime())
+</script>
+</body>
+</html>
